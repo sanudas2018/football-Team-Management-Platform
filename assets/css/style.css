@@ -67,16 +67,16 @@ p{
 
  margin-bottom: 50px;
 }
-.border-img{
+/* .border-img{
   
    position: absolute;
    bottom: 0px;
    right: 0px;
    top: 95%;
   
-}
+} */
 .header-right{
-   border: 1px solid yellow;
+   /* border: 1px solid yellow; */
    position: relative;
 }
 .right-side-img1{
@@ -105,3 +105,28 @@ p{
 .bg-table-color{
    background-color: rgb(2, 21, 37);
 }
+
+
+
+/* ------------------ START FOOTER PART ----------------- */
+footer{
+   width: 100%;
+   padding: 40px 0px;
+   background-color: rgba(27, 26, 26, 0.611);
+}
+.mid-container{
+   width: 500px;
+   display: block;
+   margin: 0px auto;
+}
+
+
+.mid-container p{
+   color: white;
+   font-size: 13px;
+   word-spacing: 2px;
+   letter-spacing: 2px;
+   text-align: center;
+}
+
+/* ------------------ END FOOTER PART ----------------- */ 
