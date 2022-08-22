@@ -38,17 +38,21 @@ let renato = {
 
 const PlayersArray = [naymar, messi, mbappe, vitor, ramos, renato];
 
-function displayAllPalyer(players) {
+// all player array loop 
+function displayAllPlayer(players) {
    for (let i = 0; i < players.length; i++) {
       let player = players[i];
       displayPlayers(player);
    }
 };
-displayAllPalyer(PlayersArray);
+displayAllPlayer(PlayersArray);
 
+// main body single palyer dynamic show 
 function displayPlayers(player) {
    const mainSection = document.getElementById('player-details');
+   const stringPlayerObject = JSON.stringify(player);
    const createCol = document.createElement('col');
+
    createCol.innerHTML = `
       <div class="card h-100 bg-dark">
       <img src=${player.imgUrl} class="card-img-top"
@@ -56,17 +60,75 @@ function displayPlayers(player) {
       <div class="card-body text-center">
          <h5 class="card-title text-white">${player.name}</h5>
          <p class="card-text "><span>${player.goals} Goals</span> . <span>${player.assist} Assist</span></p>
-         <button class="btn btn-info w-75">SELECT</button>
+         <button class="btn btn-info w-75 " onclick='handleSinglePlayer(${stringPlayerObject})'>SELECT</button>
       </div>
    </div>
    `;
+
    mainSection.appendChild(createCol);
+
 };
 
-// displayPlayers(naymar);
-// displayPlayers(naymar);
-// displayPlayers(naymar);
+// single player conunt 
+let multiplePlayerArray = [];
 
-// displayPlayers(naymar);
-// displayPlayers(naymar);
-// displayPlayers(naymar);
+
+function handleSinglePlayer(singlePlayer) {
+   // console.log(singlePlayer)
+   // push single palyer array 
+   if (multiplePlayerArray.length > 4) {
+      alert('You are not add more the 5 player');
+   } else {
+      multiplePlayerArray.push(singlePlayer);
+   }
+   // const selectBtn = document.('select-btn');
+
+   // setAttribute('disabled', true)
+
+
+   showDisplayPlayer(multiplePlayerArray);
+
+};
+
+function showDisplayPlayer(currentPlayer) {
+   const tableBody = document.getElementById('player-table');
+
+   if (currentPlayer.length > 5) {
+      alert('You are not add more the 5 player');
+   } else {
+      tableBody.innerHTML = '';
+      for (i = 0; i < currentPlayer.length; i++) {
+         let name = currentPlayer[i].name;
+         console.log(currentPlayer.length)
+         let createTr = document.createElement('tr');
+         createTr.innerHTML = `
+         <th class="text-white" scope="row">${i+1}</th>
+         <td class="text-white">${name}</td>
+      `;
+
+         tableBody.appendChild(createTr);
+
+         if (currentPlayer.length !== 5) {
+            document.getElementById('calculater').addEventListener('click', function () {
+               let getInputFieldCal = document.getElementById('input-per-player').value;
+               let parseValue = parseFloat(getInputFieldCal);
+               let playerExpenses = currentPlayer.length * parseValue;
+               let playerExpenseField = document.getElementById('player-Expense-amount');
+
+               playerExpenseField.innerText = playerExpenses;
+            });
+         }
+      };
+   }
+
+
+
+};
+
+// function calculateExpense() {
+//    let calculate = document.getElementById('calculater');
+//    let getInputFieldCal = document.getElementById('input-per-player');
+//    let playerExpenses = currentPlayer.length * getInputFieldCal;
+//    let playerExpenseField = document.getElementById('player-Expense-field');
+//    playerExpenseField.innerText = playerExpenses;
+// }
