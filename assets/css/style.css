@@ -1,0 +1,107 @@
+
+/* all fonts load  */
+
+@font-face{
+   src:url(../fonts/google-font/Poppins-Bold.ttf);
+   font-family: Poppins-Bold;
+}
+@font-face{
+   src:url(../fonts/google-font/Roboto-Medium.ttf);
+   font-family: Roboto-Medium;
+}
+@font-face{
+   src:url(../fonts/google-font/BebasNeue-Regular.ttf);
+   font-family: BebasNeue-Regular;
+}
+@font-face{
+   src:url(../fonts/google-font/Cookie-Regular.ttf);
+   font-family: Cookie-Regular;
+}
+
+body{
+   background-color: rgba(27, 26, 26, 0.875);
+}
+*{
+   margin: 0px;
+   padding: 0px;
+}
+a{
+   text-decoration: none;
+}
+/* .container{
+   width: 90%;
+   margin: 0px auto;
+} */
+h1,
+h2,
+h3{
+   font-family: Poppins-Bold;
+   color: rgb(8, 17, 64);
+}
+h1{
+   color: #FF5E19;
+   font-size: 50px;
+}
+p{
+   font-family:  Arial, Helvetica, sans-serif;
+   color: white;
+}
+
+
+.header-left{
+   background-image: url(../images/banner/path56.png);
+   background-repeat: no-repeat;
+   background-position: center bottom;
+   background-size: cover;
+   margin-top: 100px;
+   /* overflow: hidden; */
+   
+}
+.header-left img{
+   /* overflow: hidden; */
+   height: 400px;
+   margin-top: 30px;
+}
+.header-content{
+ position: relative;
+
+ margin-bottom: 50px;
+}
+.border-img{
+  
+   position: absolute;
+   bottom: 0px;
+   right: 0px;
+   top: 95%;
+  
+}
+.header-right{
+   border: 1px solid yellow;
+   position: relative;
+}
+.right-side-img1{
+   border: 1px solid rebeccapurple;
+
+}
+
+/* .right-side-img2{
+  
+} */
+/* .right-side-img2{
+   background-image: url(../images/banner/Rectangle\ 57.png);
+   background-repeat: no-repeat;
+   margin-left: 50%;
+   margin-top: 12%;
+   width: 500px;
+
+}
+.football-img{
+   width: 140px;
+   height: 140px;
+
+} */
+/* .....................  */
+
+.bg-table-color{
+   background-color: rgb(2, 21, 37);
+}
