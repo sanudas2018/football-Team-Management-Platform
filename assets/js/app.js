@@ -93,37 +93,62 @@ function handleSinglePlayer(singlePlayer) {
 function showDisplayPlayer(currentPlayer) {
    const tableBody = document.getElementById('player-table');
 
-   if (currentPlayer.length > 5) {
-      alert('You are not add more the 5 player');
-   } else {
-      tableBody.innerHTML = '';
-      for (i = 0; i < currentPlayer.length; i++) {
-         let name = currentPlayer[i].name;
-         console.log(currentPlayer.length)
-         let createTr = document.createElement('tr');
-         createTr.innerHTML = `
+   tableBody.innerHTML = '';
+   for (i = 0; i < currentPlayer.length; i++) {
+      let name = currentPlayer[i].name;
+      console.log(currentPlayer.length)
+      let createTr = document.createElement('tr');
+      createTr.innerHTML = `
          <th class="text-white" scope="row">${i+1}</th>
          <td class="text-white">${name}</td>
       `;
 
-         tableBody.appendChild(createTr);
+      tableBody.appendChild(createTr);
 
-         if (currentPlayer.length !== 5) {
-            document.getElementById('calculater').addEventListener('click', function () {
-               let getInputFieldCal = document.getElementById('input-per-player').value;
-               let parseValue = parseFloat(getInputFieldCal);
-               let playerExpenses = currentPlayer.length * parseValue;
-               let playerExpenseField = document.getElementById('player-Expense-amount');
+      document.getElementById('calculater').addEventListener('click', function () {
+         let perPlayerValue = getInputField('inputPerPlayer');
+         let playerExpenses = currentPlayer.length * perPlayerValue;
+         setValue('player-Expense-amount', playerExpenses);
+      });
 
-               playerExpenseField.innerText = playerExpenses;
-            });
-         }
-      };
-   }
+   };
+   // .......... 
+   document.getElementById('calculateTotal').addEventListener('click', function () {
+      let managerAmount = getInputField('manager-amount');
+      console.log(managerAmount)
+      let coachAmount = getInputField('coach-amount');
+      console.log(coachAmount)
+      let getPlayerExpenseValue = document.getElementById('player-Expense-amount').innerText;
+      let playerExpense = parseFloat(getPlayerExpenseValue);
+      console.log(playerExpense)
+      let playerExpenses = managerAmount + coachAmount + playerExpense;
+      setValue('total', playerExpenses);
+
+   });
 
 
 
 };
+// // calculate button Function
+// function clickCalculateBtn(id) {
+//    document.getElementById(id).addEventListener('click', function () {
+//      let inputValue =  getInputField(inputPerPlayer);
+
+//    });
+// }
+// manager-amount coach-amount total
+// get All Input Field value 
+function getInputField(fieldId) {
+   let getInputFieldId = document.getElementById(fieldId);
+   let getInputValue = getInputFieldId.value;
+   let Value = parseFloat(getInputValue);
+   return Value;
+}
+// set All Input Field value 
+function setValue(fieldId, value) {
+   let getFieldId = document.getElementById(fieldId);
+   getFieldId.innerText = value;
+}
 
 // function calculateExpense() {
 //    let calculate = document.getElementById('calculater');
