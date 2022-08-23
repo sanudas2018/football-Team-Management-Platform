@@ -71,9 +71,7 @@ p{
 }
 
 /* Button style  */
-.select-btn{
-   
-}
+
 .select-btn:hover{
    background-color: #61a4d0;
    transition: 0.5s;
