@@ -77,17 +77,14 @@ let multiplePlayerArray = [];
 
 
 function handleSinglePlayer(singlePlayer) {
-   // console.log(singlePlayer)
-   // push single player array
+
    if (multiplePlayerArray.length > 4) {
       alert('You are not add more the 5 player');
    } else {
       multiplePlayerArray.push(singlePlayer);
 
    }
-   // const selectBtn = document.('select-btn');
 
-   // event.setAttribute('disabled', true)
 
    showDisplayPlayer(multiplePlayerArray);
 
@@ -127,9 +124,7 @@ function showDisplayPlayer(currentPlayer) {
       let managerAmount = getInputField('manager-amount');
       console.log(managerAmount)
       let coachAmount = getInputField('coach-amount');
-      // console.log(coachAmount)
 
-      // console.log(playerExpense)
       if (isNaN(managerAmount)) {
          alert('Please input Manger Amount')
       } else if (isNaN(coachAmount)) {
@@ -146,15 +141,7 @@ function showDisplayPlayer(currentPlayer) {
 
 
 };
-// // calculate button Function
-// function clickCalculateBtn(id) {
-//    document.getElementById(id).addEventListener('click', function () {
-//      let inputValue =  getInputField(inputPerPlayer);
 
-//    });
-// }
-// manager-amount coach-amount total
-// get All Input Field value 
 function getInputField(fieldId) {
    let getInputFieldId = document.getElementById(fieldId);
    let getInputValue = getInputFieldId.value;
@@ -166,11 +153,3 @@ function setValue(fieldId, value) {
    let getFieldId = document.getElementById(fieldId);
    getFieldId.innerText = value;
 }
-
-// function calculateExpense() {
-//    let calculate = document.getElementById('calculater');
-//    let getInputFieldCal = document.getElementById('input-per-player');
-//    let playerExpenses = currentPlayer.length * getInputFieldCal;
-//    let playerExpenseField = document.getElementById('player-Expense-field');
-//    playerExpenseField.innerText = playerExpenses;
-// }

@@ -70,7 +70,19 @@ p{
    background-color: rgb(2, 21, 37);
 }
 
-
+/* Button style  */
+.select-btn{
+   
+}
+.select-btn:hover{
+   background-color: #61a4d0;
+   transition: 0.5s;
+}
+/* .......... Total Amount style .........  */
+.total-amount{
+   color: #FF5E19;
+   font-size: 20px;
+}
 
 /* ------------------ START FOOTER PART ----------------- */
 footer{
