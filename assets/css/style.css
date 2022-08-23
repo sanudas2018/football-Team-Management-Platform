@@ -76,6 +76,34 @@ p{
    background-color: #61a4d0;
    transition: 0.5s;
 }
+/* selected header  */
+.selected-header::after{
+   content: '';
+   display: block;
+   margin: 0px auto;
+   border-bottom: 1px solid transparent;
+   padding: 3px;
+   border-image: url('../images/banner/Ureg.png') 30% stretch;
+   border-image-outset: 0px 15px 15px 0px;
+   border-image-width: 30px;
+   margin-top: 1px;
+   width: 50%;
+   
+}
+/* ......... budget .......  */
+.budget-header::after{
+   content: '';
+   display: block;
+   margin: 0px auto;
+   border-bottom: 1px solid transparent;
+   padding: 3px;
+   border-image: url('../images/banner/Ureg.png') 30% stretch;
+   border-image-outset: 0px 15px 15px 0px;
+   border-image-width: 30px;
+   margin-top: 1px;
+   width: 50%;
+   
+}
 /* .......... Total Amount style .........  */
 .total-amount{
    color: #FF5E19;
